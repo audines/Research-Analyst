@@ -1,27 +1,33 @@
-# Employment Services (ES) Client Outcomes Analysis – FY 2022-23
+# Employment Services Client Outcomes – FY 2022–23 Analysis in Python  
+*Author: Aude Ines*
+
+![Exit Outcomes](exit_outcomes_with_numbers.png)
+
+---
 
 ## 📊 Overview
-This project analyzes the **Employment Services (ES) Client Outcomes dataset** for fiscal year **2022–23**, covering **258 Service Delivery Sites (SDS)** across Ontario.
+This project analyzes the **Employment Services (ES) Client Outcomes** dataset for the **2022–23 fiscal year**, covering 258 service delivery sites (SDS) across Ontario.  
+The goal is to evaluate program effectiveness through **descriptive and inferential statistics**, focusing on employment at program exit and follow-up outcomes at 3 months.
 
-The goal is to explore client outcomes at **exit** and **3 months**, assess **program effectiveness**, and identify **data quality challenges**.
-
----
-
-## 🧠 Key Objectives
-- Evaluate **employment outcomes at exit** and **3-month sustainability**.
-- Perform **univariate, bivariate, and multivariate analyses**.
-- Identify **data quality issues** (missingness, suppression, imbalance).
-- Develop a **logistic regression model** to test predictive power of exit outcomes.
-- Provide **recommendations for further analysis and policy use**.
+The analysis is conducted in **Python (Jupyter Notebook)** using `pandas`, `matplotlib`, `seaborn`, and `scikit-learn`.
 
 ---
 
-## 🧰 Tools and Libraries
-- **Python (Jupyter Notebook)** for data analysis  
-  Libraries used:
-  ```python
-  pandas
-  numpy
-  matplotlib
-  seaborn
-  scikit-learn
+## 🧩 Objectives
+- Explore and describe the dataset using appropriate descriptive statistics.
+- Perform univariate, bivariate, and multivariate analyses.
+- Identify key patterns and potential data quality issues.
+- Test whether **employment at exit** predicts **employment at 3 months**.
+- Generate actionable insights for program evaluation and policy decisions.
+
+---
+
+## 🔍 Key Steps in the Analysis
+The project follows a structured pipeline:
+
+```mermaid
+graph LR
+A[Load Data] --> B[Inspection]
+B --> C[Cleaning]
+C --> D[Summary Statistics]
+D --> E[Regression Modeling]
