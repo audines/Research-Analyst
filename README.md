@@ -28,7 +28,7 @@ D --> E[Regression Modeling]
 
 
 
-# 1. Data Loading & Inspection
+## 1. Data Loading & Inspection
 | Aspect            | Details                            |
 | ----------------- | ---------------------------------- |
 | Total Sites       | 258                                |
@@ -40,9 +40,7 @@ D --> E[Regression Modeling]
 
 
 
-# 2. Data Cleaning & Transformation
-
-
+## 2. Data Cleaning & Transformation
 
 Replaced suppression codes (x, SP, p, r, .) with NaN.
 
@@ -55,7 +53,7 @@ pct_emp_3m = out_3_sum_emp / num_assist
 
 (to allow fair comparison across sites of different sizes)
 
-# 3. Descriptive Statistics
+## 3. Descriptive Statistics
 
 Most sites serve fewer than 500 clients; a few exceed 1,000.
 
@@ -65,7 +63,7 @@ Unknown outcomes (~10%) highlight data quality issues.
 
 At 3 months, employment declines, with 35,000 “Null” and 16,000 “Unknown” follow-ups.
 
-#  4. Multivariate & Regression Analysis
+##  4. Multivariate & Regression Analysis
 
 Moderate correlation between employment at exit and at 3 months (r ≈ 0.40).
 
@@ -77,7 +75,7 @@ More employed clients at exit → higher odds of sustained employment.
 
 More unemployed at exit → lower odds of sustained employment.
 
-🧠 Key Findings
+## 🧠 Key Findings
 
 Exit outcomes moderately predict short-term follow-up.
 
@@ -89,7 +87,7 @@ Toronto accounts for ~25% of all sites, shaping provincial averages.
 
 Site size is not a strong predictor of success.
 
-🚧 Data Quality Challenges
+## 🚧 Data Quality Challenges
 
 
 | Issue               | Description                        | Impact                  |
@@ -101,7 +99,7 @@ Site size is not a strong predictor of success.
 | Class Imbalance     | Most sites show employment         | Inflates model accuracy |
 
 
-💡 Recommendations
+##  💡 Recommendations
 
 Use percentages instead of raw counts for site comparisons.
 
@@ -115,7 +113,7 @@ Improve follow-up reporting to reduce “Unknown” and “Null” outcomes.
 
 Include equity analyses (age, gender, region) if data available.
 
-🧰 Tools and Libraries
+## 🧰 Tools and Libraries
 
 | Category      | Libraries                          |
 | ------------- | ---------------------------------- |
