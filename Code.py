@@ -1,9 +1,24 @@
 # ==========================================================
 # Employment Services Client Outcomes FY 2022-23 Analysis
 # Author: Aude Ines
+# Description:
+#   This analysis explores employment outcomes for clients of
+#   Employment Services (ES) across 258 Service Delivery Sites (SDS)
+#   in Ontario during fiscal year 2022–2023.
+#
+#   The notebook covers:
+#     - Data loading and inspection
+#     - Cleaning and transformation
+#     - Descriptive statistics (univariate)
+#     - Bivariate relationships
+#     - Multivariate relationships
+#     - Logistic regression modeling
+#
+#   Tools: Python, pandas, seaborn, matplotlib, scikit-learn
 # ==========================================================
 
-# === Import Libraries ===
+
+# === 1. Import Required Libraries ===
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -13,106 +28,68 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, accuracy_score
 import statsmodels.api as sm
 
-# === Load Data ===
+# Configure plotting aesthetics
+sns.set(style="whitegrid", palette="muted", font_scale=1.1)
+
+
+# === 2. Load Dataset ===
+# The dataset contains outcome and client count data for Employment Services (ES)
+# Each row represents one Service Delivery Site (SDS)
+# Columns include employment outcomes, training participation, and unknown statuses at exit and 3 months
 df = pd.read_csv('../data/ES_Client_Outcomes_2022_23.csv')
 
-# === Inspect Data ===
-print(df.shape)
-print(df.head())
-print(df.info())
+print("=== Dataset Loaded ===")
+print(f"Shape: {df.shape[0]} rows × {df.shape[1]} columns\n")
+print(df.head(3))  # preview first 3 rows
 
-# === Cleaning ===
+
+# === 3. Data Inspection ===
+# Check for missing values, datatypes, and suppressed codes
+print("\n=== Data Information ===")
+print(df.info())
+print("\nMissing values per column:")
+print(df.isna().sum())
+
+# Look at column names to understand structure
+print("\nColumn names:")
+print(df.columns.tolist())
+
+
+# === 4. Data Cleaning ===
+# The dataset uses suppression codes (x, SP, p, r, .)
+# These represent suppressed or missing values for privacy or data quality reasons.
+# We replace them with NaN (Python’s representation for missing data).
+
 df.replace(['x', 'SP', 'p', 'r', '.'], np.nan, inplace=True)
+
+# Some numeric columns are stored as strings with commas ("1,200")
+# Remove commas to safely convert them to numeric
 df.replace(',', '', regex=True, inplace=True)
+
+# Convert all numeric-like columns to numeric data types
 df = df.apply(pd.to_numeric, errors='ignore')
 
-# === Derived Variables ===
+print("\nData cleaning complete — suppression codes replaced, columns converted.")
+
+
+# === 5. Derived Indicators ===
+# To fairly compare sites of different sizes (some have 20 clients, others >1,500),
+# we create percentage-based performance indicators.
 df['pct_emp_exit'] = df['out_exit_sum_emp'] / df['num_assist']
 df['pct_emp_3m'] = df['out_3_sum_emp'] / df['num_assist']
 
-# === Summary Statistics ===
+print("\nDerived indicators created:")
+print(df[['pct_emp_exit', 'pct_emp_3m']].head(3))
+
+
+# === 6. Summary Statistics ===
+# Before analyzing outcomes, understand how large the sites are.
+# The number of clients assisted (num_assist) varies dramatically.
+
 summary = df['num_assist'].describe()
+print("\n=== Summary Statistics: Assisted Clients ===")
 print(summary)
 
+# Visualize the distribution of assisted clients per site
 plt.figure(figsize=(8, 5))
-sns.histplot(df['num_assist'], bins=30, kde=True, color='steelblue')
-plt.title('Distribution of Assisted Clients per Site')
-plt.xlabel('Number of Clients Assisted')
-plt.ylabel('Frequency')
-plt.savefig('../figures/numeric_summary_visual.png')
-plt.show()
-
-# === Univariate Analysis: Exit Outcomes ===
-exit_cols = ['out_exit_sum_emp', 'out_exit_sum_te', 'out_exit_unemp', 'out_exit_oth', 'out_exit_unkn']
-exit_totals = df[exit_cols].sum().sort_values(ascending=False)
-
-plt.figure(figsize=(8, 5))
-sns.barplot(x=exit_totals.values, y=exit_totals.index, palette='viridis')
-plt.title('Exit Outcomes Across All Sites')
-plt.xlabel('Number of Clients')
-plt.ylabel('Outcome Type')
-for i, val in enumerate(exit_totals.values):
-    plt.text(val + 500, i, f"{val:,}", va='center')
-plt.savefig('../figures/exit_outcomes_with_numbers.png')
-plt.show()
-
-# === Univariate: 3-Month Outcomes ===
-three_cols = ['out_3_sum_emp', 'out_3_sum_te', 'out_3_unemp', 'out_3_oth', 'out_3_unkn', 'out_3_null']
-three_totals = df[three_cols].sum().sort_values(ascending=False)
-
-plt.figure(figsize=(8, 5))
-sns.barplot(x=three_totals.values, y=three_totals.index, palette='magma')
-plt.title('3-Month Outcomes Across All Sites')
-plt.xlabel('Number of Clients')
-plt.ylabel('Outcome Type')
-for i, val in enumerate(three_totals.values):
-    plt.text(val + 500, i, f"{val:,}", va='center')
-plt.savefig('../figures/threemonths_outcomes_with_numbers.png')
-plt.show()
-
-# === Bivariate: Employment at Exit vs 3 Months ===
-plt.figure(figsize=(7, 5))
-sns.regplot(x='pct_emp_exit', y='pct_emp_3m', data=df, color='teal')
-plt.title('Employment Rate: Exit vs 3 Months')
-plt.xlabel('Employment Rate at Exit')
-plt.ylabel('Employment Rate at 3 Months')
-plt.savefig('../figures/mul.png')
-plt.show()
-
-corr = df[['pct_emp_exit', 'pct_emp_3m']].corr().iloc[0, 1]
-print(f"Correlation between Exit and 3-Month Employment: {corr:.2f}")
-
-# === Multivariate: Scatter Matrix ===
-vars_for_matrix = ['num_assist', 'pct_emp_exit', 'pct_emp_3m', 'out_exit_unemp']
-sm_df = df[vars_for_matrix].dropna()
-plt.figure(figsize=(10, 10))
-scatter_matrix(sm_df, alpha=0.7, diagonal='kde')
-plt.suptitle("Multivariate Scatter Matrix", y=0.92)
-plt.savefig('../figures/corr.png')
-plt.show()
-
-# === Logistic Regression ===
-X = df[['out_exit_sum_emp', 'out_exit_unemp']].fillna(0)
-y = (df['out_3_sum_emp'] > 0).astype(int)
-model = LogisticRegression(max_iter=1000)
-model.fit(X, y)
-
-y_pred = model.predict(X)
-acc = accuracy_score(y, y_pred)
-cm = confusion_matrix(y, y_pred)
-
-print("Coefficients:", model.coef_)
-print("Accuracy:", acc)
-print("Confusion Matrix:\n", cm)
-
-# Plot coefficients
-coef_df = pd.DataFrame({
-    'Variable': ['Employed at Exit', 'Unemployed at Exit'],
-    'Coefficient': model.coef_[0]
-})
-
-plt.figure(figsize=(6, 4))
-sns.barplot(data=coef_df, x='Variable', y='Coefficient', palette='coolwarm')
-plt.title('Logistic Regression Coefficients')
-plt.savefig('../figures/log.png')
-plt.show()
+sns.histplot
