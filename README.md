@@ -1,5 +1,4 @@
-# Employment Services Client Outcomes – FY 2022–23 Analysis in Python  
-*Author: Aude Ines*
+# Employment Services Client Outcomes – FY 2022–23 Analysis in Python 
 
 ![Exit Outcomes](exit_outcomes_with_numbers.png)
 
@@ -21,7 +20,6 @@ The analysis is conducted in **Python (Jupyter Notebook)** using `pandas`, `matp
 - Generate actionable insights for program evaluation and policy decisions.
 
 ---
-
 ## 🔍 Key Steps in the Analysis
 The project follows a structured pipeline:
 
