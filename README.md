@@ -33,11 +33,11 @@ The project follows a structured pipeline:
 
 ## 2. Data Cleaning & Transformation
 
-Replaced suppression codes (x, SP, p, r, .) with NaN.
+- Replaced suppression codes (x, SP, p, r, .) with NaN.
 
-Converted outcome columns to numeric values.
+- Converted outcome columns to numeric values.
 
-Created derived indicators:
+- Created derived indicators:
 
 pct_emp_exit = out_exit_sum_emp / num_assist
 pct_emp_3m = out_3_sum_emp / num_assist
@@ -46,37 +46,37 @@ pct_emp_3m = out_3_sum_emp / num_assist
 
 ## 3. Descriptive Statistics
 
-Most sites serve fewer than 500 clients; a few exceed 1,000.
+- Most sites serve fewer than 500 clients; a few exceed 1,000.
 
-Employment dominates exit outcomes (~55,000 clients), followed by training (~13,000).
+-  dominates exit outcomes (~55,000 clients), followed by training (~13,000).
 
-Unknown outcomes (~10%) highlight data quality issues.
+- Unknown outcomes (~10%) highlight data quality issues.
 
-At 3 months, employment declines, with 35,000 “Null” and 16,000 “Unknown” follow-ups.
+- At 3 months, employment declines, with 35,000 “Null” and 16,000 “Unknown” follow-ups.
 
 ##  4. Multivariate & Regression Analysis
 
-Moderate correlation between employment at exit and at 3 months (r ≈ 0.40).
+- Moderate correlation between employment at exit and at 3 months (r ≈ 0.40).
 
-Larger sites are not always more effective — quality and context matter.
+-  sites are not always more effective — quality and context matter.
 
-Logistic regression confirms that:
+- Logistic regression confirms that:
 
-More employed clients at exit → higher odds of sustained employment.
+-  employed clients at exit → higher odds of sustained employment.
 
-More unemployed at exit → lower odds of sustained employment.
+- More unemployed at exit → lower odds of sustained employment.
 
 ## 🧠 Key Findings
 
-Exit outcomes moderately predict short-term follow-up.
+- Exit outcomes moderately predict short-term follow-up.
 
-Employment and training are the two dominant exit pathways.
+- Employment and training are the two dominant exit pathways.
 
-Toronto accounts for ~25% of all sites, shaping provincial averages.
+- Toronto accounts for ~25% of all sites, shaping provincial averages.
 
-“Unknown” and “Null” outcomes reduce data reliability.
+- “Unknown” and “Null” outcomes reduce data reliability.
 
-Site size is not a strong predictor of success.
+- Site size is not a strong predictor of success.
 
 ## 🚧 Data Quality Challenges
 
