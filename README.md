@@ -1,7 +1,5 @@
 # Employment Services Client Outcomes – FY 2022–23 Analysis in Python 
 
----
-
 ## 📊 Overview
 This project analyzes the **Employment Services (ES) Client Outcomes** dataset for the **2022–23 fiscal year**, covering 258 service delivery sites (SDS) across Ontario.  
 The goal is to evaluate program effectiveness through **descriptive and inferential statistics**, focusing on employment at program exit and follow-up outcomes at 3 months.
