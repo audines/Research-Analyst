@@ -1,4 +1,4 @@
-# Employment Services Client Outcomes – FY 2022–23 Analysis in Python 
+## Employment Services Client Outcomes – FY 2022–23 Analysis in Python 
 
 ## 📊 Overview
 This project analyzes the **Employment Services (ES) Client Outcomes** dataset for the **2022–23 fiscal year**, covering 258 service delivery sites (SDS) across Ontario.  
@@ -20,7 +20,7 @@ The analysis is conducted in **Python (Jupyter Notebook)** using `pandas`, `matp
 The project follows a structured pipeline:
 
 graph LR
-A[Load Data] --> B[Inspection]
+A [Load Data] --> B[Inspection]
 B --> C[Cleaning]
 C --> D[Summary Statistics]
 D --> E[Regression Modeling]
@@ -28,7 +28,7 @@ D --> E[Regression Modeling]
 
 
 
-1. Data Loading & Inspection
+# 1. Data Loading & Inspection
 | Aspect            | Details                            |
 | ----------------- | ---------------------------------- |
 | Total Sites       | 258                                |
@@ -40,7 +40,7 @@ D --> E[Regression Modeling]
 
 
 
-2. Data Cleaning & Transformation
+# 2. Data Cleaning & Transformation
 
 
 
@@ -55,7 +55,7 @@ pct_emp_3m = out_3_sum_emp / num_assist
 
 (to allow fair comparison across sites of different sizes)
 
-3. Descriptive Statistics
+# 3. Descriptive Statistics
 
 Most sites serve fewer than 500 clients; a few exceed 1,000.
 
@@ -65,7 +65,7 @@ Unknown outcomes (~10%) highlight data quality issues.
 
 At 3 months, employment declines, with 35,000 “Null” and 16,000 “Unknown” follow-ups.
 
-4. Multivariate & Regression Analysis
+#  4. Multivariate & Regression Analysis
 
 Moderate correlation between employment at exit and at 3 months (r ≈ 0.40).
 
