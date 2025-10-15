@@ -19,7 +19,6 @@ The analysis is conducted in **Python (Jupyter Notebook)** using `pandas`, `matp
 ## 🔍 Key Steps in the Analysis
 The project follows a structured pipeline:
 
-```mermaid
 graph LR
 A[Load Data] --> B[Inspection]
 B --> C[Cleaning]
