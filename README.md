@@ -1,7 +1,5 @@
 # Employment Services Client Outcomes – FY 2022–23 Analysis in Python 
 
-![Exit Outcomes](exit_outcomes_with_numbers.png)
-
 ---
 
 ## 📊 Overview
