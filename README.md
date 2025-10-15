@@ -19,15 +19,6 @@ The analysis is conducted in **Python (Jupyter Notebook)** using `pandas`, `matp
 ## 🔍 Key Steps in the Analysis
 The project follows a structured pipeline:
 
-graph LR
-A [Load Data] --> B[Inspection]
-B --> C[Cleaning]
-C --> D[Summary Statistics]
-D --> E[Regression Modeling]
-
-
-
-
 ## 1. Data Loading & Inspection
 | Aspect            | Details                            |
 | ----------------- | ---------------------------------- |
@@ -101,24 +92,16 @@ Site size is not a strong predictor of success.
 
 ##  💡 Recommendations
 
-Use percentages instead of raw counts for site comparisons.
+-  Use percentages instead of raw counts for site comparisons.
 
-Conduct regional comparisons to balance Toronto’s influence.
+-  Conduct regional comparisons to balance Toronto’s influence.
 
-Analyze training-to-employment pathways for long-term effects.
+-  Analyze training-to-employment pathways for long-term effects.
 
-Extend evaluation to 6- and 12-month outcomes.
+-  Extend evaluation to 6- and 12-month outcomes.
 
-Improve follow-up reporting to reduce “Unknown” and “Null” outcomes.
+-  Improve follow-up reporting to reduce “Unknown” and “Null” outcomes.
 
-Include equity analyses (age, gender, region) if data available.
+-  Include equity analyses (age, gender, region) if data available.
 
-## 🧰 Tools and Libraries
-
-| Category      | Libraries                          |
-| ------------- | ---------------------------------- |
-| Data Handling | `pandas`, `numpy`                  |
-| Visualization | `matplotlib`, `seaborn`            |
-| Modeling      | `scikit-learn`, `statsmodels`      |
-| Environment   | `Jupyter Notebook`, `Python 3.10+` |
 
