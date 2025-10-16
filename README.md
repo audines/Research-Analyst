@@ -69,7 +69,7 @@ Immediate program effectiveness — what happened when clients exited the progra
 > **Employment dominates**, followed by **Training/Education**.  
 > About **10% of cases are “Unknown”**, flagging a data quality concern.
 
-![Exit Outcomes](https://raw.githubusercontent.com/audines/Research-Analyst/blob/main/exit_outcomes_with_numbers.png)
+![Exit Outcomes](https://raw.githubusercontent.com/audines/Research-Analyst/main/exit_outcomes_with_numbers.png)
 
 -  dominates exit outcomes (~55,000 clients), followed by training (~13,000).
 
@@ -84,7 +84,7 @@ Short-term sustainability — are clients still employed 3 months after exit?
 > → Follow-up data quality must improve for reliable evaluation.
 
 
-![3-Month Outcomes](https://raw.githubusercontent.com/)audines/Research-Analyst/blob/main/threemonths_outcomes_with_numbers.png)
+![3-Month Outcomes](https://raw.githubusercontent.com/audines/Research-Analyst/main/threemonths_outcomes_with_numbers.png)
 
 ### Regional Representation — Count of Records by Region
 Shows how many service sites are in each Ontario region.
@@ -92,7 +92,7 @@ Shows how many service sites are in each Ontario region.
 > **Toronto = ~25% of all SDSs**, heavily influencing provincial averages.  
 > → Normalization and regional disaggregation are required for fairness.
 
-[![Regional Counts](https://raw.githubusercontent.com/audines/Research-Analyst/blob/main/categorical_summary_visual.png)
+[![Regional Counts](https://raw.githubusercontent.com/audines/Research-Analyst/main/categorical_summary_visual.png)
   
 
 ##  4. Multivariate & Regression Analysis
@@ -106,7 +106,7 @@ Scatterplot + density plot of employment rates.
 > Sites with strong exit outcomes tend to maintain good 3-month performance,  
 > but other contextual factors also influence sustainability.
 
-![Exit vs 3 Month Employment](https://raw.githubusercontent.com/)audines/Research-Analyst/blob/main/mul.png)
+![Exit vs 3 Month Employment](https://raw.githubusercontent.com/audines/Research-Analyst/main/mul.png)
 
 ---
 
@@ -116,7 +116,7 @@ Examines interactions among multiple indicators: site size, exit employment, 3-m
 > Confirms moderate positive relationships but no clear link between **site size** and success.  
 > → **Conclusion:** Quality and context matter more than scale.
 
-![Scatter Matrix](https://raw.githubusercontent.com/audines/Research-Analyst/blob/main/corr.png))
+![Scatter Matrix](https://raw.githubusercontent.com/audines/Research-Analyst/main/corr.png)
 
 
 
@@ -132,7 +132,7 @@ Tests whether exit outcomes predict follow-up employment.
 >  
 > → Exit success predicts sustainability, but additional factors should be modeled.
 
-![Logistic Regression Results](https://raw.githubusercontent.com/)audines/Research-Analyst/blob/main/logistic_results_side_by_side_with_legend.png)
+![Logistic Regression Results](https://raw.githubusercontent.com/audines/Research-Analyst/main/logistic_results_side_by_side_with_legend.png)
 
 - Moderate correlation between employment at exit and at 3 months (r ≈ 0.40).
 
