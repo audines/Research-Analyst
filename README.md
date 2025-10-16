@@ -53,6 +53,9 @@ Shows the variation in client volume across 258 service delivery sites (SDSs).
 
 ![Assisted Clients Summary](https://raw.githubusercontent.com/audines/Research-Analyst/main/assisted_clients_hist_with_stats.png)
 
+*Figure 1 : Résumé numérique des clients assistés (exercice 2022–23).*
+
+
 
 - Most sites serve fewer than 500 clients; a few exceed 1,000,  creating strong data skew.  
 > → **Conclusion:** Use normalized rates (percentages) instead of raw counts.
