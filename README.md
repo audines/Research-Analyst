@@ -17,7 +17,63 @@ The analysis is conducted in **Python (Jupyter Notebook)** using `pandas`, `matp
 
 ---
 ## 🔍 Key Steps in the Analysis
-The project follows a structured pipeline:
+
+
+#  Dataset Description & Dictionary
+
+ThE dataset contains **program performance data** for Ontario’s *Employment Services (ES)* network for the **2022–2023 fiscal year**.  
+Each row represents one **Service Delivery Site (SDS)** — a location that delivers Employment Ontario programs.
+
+The dataset reports **client outcomes** at two key points:
+- **At Exit** — when the client leaves the program.
+- **At 3-Month Follow-Up** — to measure sustained employment.
+
+---
+
+## 🧾 Overview
+
+| Category | Description |
+|-----------|--------------|
+| **Name** | Employment Services Client Outcomes – FY 2022–23 |
+| **Source** | Ontario Ministry of Labour, Immigration, Training and Skills Development |
+| **Observation Level** | Service Delivery Site (SDS) |
+| **Records** | 258 sites across Ontario |
+| **Timeframe** | April 2022 – March 2023 |
+| **Purpose** | Evaluate how Employment Services help clients gain and sustain employment |
+| **Format** | CSV |
+| **Author (Analysis)** | *Aude Ines* |
+| **Main Indicators** | % Employed at Exit, % Employed at 3-Months |
+
+---
+
+## 🗂️ 1. Data Structure
+
+| Column | Meaning | Notes / Examples |
+|---------|----------|------------------|
+| **est_region** | Economic region of Ontario | e.g., Durham, Halton, London, Northeast |
+| **fiscal_year** | Fiscal year of reporting | 2022–2023 |
+| **eo_program** | Employment Ontario program type | "ES" (Employment Service) |
+| **sds_id** | Service Delivery Site unique ID | 1273 |
+| **sds_name** | Name of the delivery site | "Durham College Employment Centre" |
+| **sds_sec** | Secondary sector or service type | Funding or service classification |
+| **num_assist** | Number of clients assisted | Clients served during the year |
+
+---
+
+## 🧮 2. Exit Outcomes (Immediate Program Results)
+
+These fields record **client outcomes at the moment of program exit**.
+
+| Column | Description | Interpretation |
+|---------|--------------|----------------|
+| `out_exit_sum_emp` | Clients employed at exit | Immediate job success |
+| `out_exit_sum_te` | Clients in training or education | Continued education or upskilling |
+| `out_exit_unemp` | Clients unemployed | Left without a job or training |
+| `out_exit_sum_oth` | Other outcomes | Withdrew, relocated, etc. |
+| `out_exit_unkn` | Unknown outcomes | Information not collected |
+| `out_exit_null` | Null/missing outcomes | Suppressed or unavailable |
+
+
 
 ## 1. Data Loading & Inspection
 | Aspect            | Details                            |
