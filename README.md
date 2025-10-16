@@ -110,7 +110,7 @@ Examines interactions among multiple indicators: site size, exit employment, 3-m
 > Confirms moderate positive relationships but no clear link between **site size** and success.  
 > → **Conclusion:** Quality and context matter more than scale.
 
-![Scatter Matrix](figures/corr.png)
+![Scatter Matrix]([figures/corr.png](https://github.com/audines/Research-Analyst/blob/main/corr.png))
 
 
 
@@ -126,7 +126,7 @@ Tests whether exit outcomes predict follow-up employment.
 >  
 > → Exit success predicts sustainability, but additional factors should be modeled.
 
-![Logistic Regression Results](figures/log.png)
+![Logistic Regression Results](https://github.com/audines/Research-Analyst/blob/main/logistic_results_side_by_side_with_legend.png)
 
 - Moderate correlation between employment at exit and at 3 months (r ≈ 0.40).
 
@@ -139,7 +139,7 @@ Tests whether exit outcomes predict follow-up employment.
 - More unemployed at exit → lower odds of sustained employment.
 
 ## 🧠 | Theme | Key Finding | Policy/Program Implication |
-|:------|:-------------|:----------------------------|
+
 | Predictive Power | Exit employment moderately predicts 3-month employment ($r ≈ 0.40$) | Programs with strong exit results tend to sustain success |
 | Regional Balance | Toronto dominates dataset (~25%) | Use normalized rates and regional analysis for fairness |
 | Data Quality | Many Null/Unknown follow-ups | Improve tracking systems |
