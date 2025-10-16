@@ -19,7 +19,7 @@ The analysis is conducted in **Python (Jupyter Notebook)** using `pandas`, `matp
 ## 🔍 Key Steps in the Analysis
 
 
-#  Dataset Description & Dictionary
+##  Dataset Description & Dictionary
 
 ThE dataset contains **program performance data** for Ontario’s *Employment Services (ES)* network for the **2022–2023 fiscal year**.  
 Each row represents one **Service Delivery Site (SDS)** — a location that delivers Employment Ontario programs.
@@ -73,6 +73,13 @@ These fields record **client outcomes at the moment of program exit**.
 | `out_exit_unkn` | Unknown outcomes | Information not collected |
 | `out_exit_null` | Null/missing outcomes | Suppressed or unavailable |
 
+## 🧾 
+
+| File | Description |
+|------|--------------|
+| **`Dataset_ES_Client_Outcomes_2223_Table_1.csv`** | Raw dataset |
+| **`Technical_Dictionary_ES_Client_Outcomes_2223.csv`** | Variable definitions |
+| **`Contextual Documentation - ES Client Outcomes (22-23).docx`** | Official methodology context |
 
 
 ## 1. Data Loading & Inspection
