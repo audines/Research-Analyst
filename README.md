@@ -46,15 +46,87 @@ pct_emp_3m = out_3_sum_emp / num_assist
 
 ## 3. Descriptive Statistics
 
-- Most sites serve fewer than 500 clients; a few exceed 1,000.
+---
+
+### 🔹 Data Distribution — Assisted Clients per Site
+Shows the variation in client volume across 258 service delivery sites (SDSs).
+
+(https://github.com/audines/Research-Analyst/blob/main/assisted_clients_hist_with_stats.png)
+
+- Most sites serve fewer than 500 clients; a few exceed 1,000,  creating strong data skew.  
+> → **Conclusion:** Use normalized rates (percentages) instead of raw counts.
+
+
+
+
+### 🔹  Exit Outcomes (Univariate Analysis)
+Immediate program effectiveness — what happened when clients exited the program.
+
+> **Employment dominates**, followed by **Training/Education**.  
+> About **10% of cases are “Unknown”**, flagging a data quality concern.
+(https://github.com/audines/Research-Analyst/blob/main/exit_outcomes_with_numbers.png)
 
 -  dominates exit outcomes (~55,000 clients), followed by training (~13,000).
 
 - Unknown outcomes (~10%) highlight data quality issues.
 
-- At 3 months, employment declines, with 35,000 “Null” and 16,000 “Unknown” follow-ups.
+- 
+### 🔹  3-Month Outcomes (Univariate Analysis)
+Short-term sustainability — are clients still employed 3 months after exit?
+
+> Employment decreases slightly, but the main issue is **missing data**:  
+> over **35,000 Null** and **16,000 Unknown** outcomes.  
+> → Follow-up data quality must improve for reliable evaluation.
+
+(https://github.com/audines/Research-Analyst/blob/main/threemonths_outcomes_with_numbers.png)
+
+### Regional Representation — Count of Records by Region
+Shows how many service sites are in each Ontario region.
+
+> **Toronto = ~25% of all SDSs**, heavily influencing provincial averages.  
+> → Normalization and regional disaggregation are required for fairness.
+
+[![Regional Counts](figures/categorical_summary_visual.png)](https://github.com/audines/Research-Analyst/blob/main/categorical_summary_visual.png)
+  
 
 ##  4. Multivariate & Regression Analysis
+
+
+
+### 🔹Bivariate Relationship — Exit vs 3-Month Employment
+Scatterplot + density plot of employment rates.
+
+> Positive correlation **(r ≈ 0.40)**:  
+> Sites with strong exit outcomes tend to maintain good 3-month performance,  
+> but other contextual factors also influence sustainability.
+
+![Exit vs 3 Month Employment](figures/mul.png)
+
+---
+
+###  Multivariate Analysis — Scatter Matrix
+Examines interactions among multiple indicators: site size, exit employment, 3-month employment, and unemployment.
+
+> Confirms moderate positive relationships but no clear link between **site size** and success.  
+> → **Conclusion:** Quality and context matter more than scale.
+
+![Scatter Matrix](figures/corr.png)
+
+
+
+
+### 🔹  Predictive Modeling — Logistic Regression
+Tests whether exit outcomes predict follow-up employment.
+
+> **Coefficients:**  
+> + Employed at Exit → +0.0124 (positive effect)  
+> + Unemployed at Exit → –0.0148 (negative effect)  
+>  
+> **Accuracy:** ~97%, but inflated by class imbalance (most sites had employment at follow-up).  
+>  
+> → Exit success predicts sustainability, but additional factors should be modeled.
+
+![Logistic Regression Results](figures/log.png)
 
 - Moderate correlation between employment at exit and at 3 months (r ≈ 0.40).
 
@@ -99,94 +171,6 @@ pct_emp_3m = out_3_sum_emp / num_assist
 
 -  Include equity analyses (age, gender, region) if data available.
 
-
-
-
----
-
-## 🖼️ Summary Dashboard — Key Visuals and Results
-
-Below are the main outputs from the **Employment Services Client Outcomes Analysis (2022–23)**.  
-Each visual represents one analytical stage: univariate, bivariate, multivariate, and predictive modeling.
-
----
-
-### 🔹 1. Data Distribution — Assisted Clients per Site
-Shows the variation in client volume across 258 service delivery sites (SDSs).
-
-> Most sites assist **fewer than 500 clients**, but a few serve **1,000+**, creating strong data skew.  
-> → **Conclusion:** Use normalized rates (percentages) instead of raw counts.
-
-![Assisted Clients Summary](figures/numeric_summary_visual.png)
-
----
-
-### 🔹 2. Exit Outcomes (Univariate Analysis)
-Immediate program effectiveness — what happened when clients exited the program.
-
-> **Employment dominates**, followed by **Training/Education**.  
-> About **10% of cases are “Unknown”**, flagging a data quality concern.
-
-![Exit Outcomes](figures/exit_outcomes_with_numbers.png)
-
----
-
-### 🔹 3. 3-Month Outcomes (Univariate Analysis)
-Short-term sustainability — are clients still employed 3 months after exit?
-
-> Employment decreases slightly, but the main issue is **missing data**:  
-> over **35,000 Null** and **16,000 Unknown** outcomes.  
-> → Follow-up data quality must improve for reliable evaluation.
-
-![3-Month Outcomes](figures/threemonths_outcomes_with_numbers.png)
-
----
-
-### 🔹 4. Regional Representation — Count of Records by Region
-Shows how many service sites are in each Ontario region.
-
-> **Toronto = ~25% of all SDSs**, heavily influencing provincial averages.  
-> → Normalization and regional disaggregation are required for fairness.
-
-![Regional Counts](figures/categorical_summary_visual.png)
-
----
-
-### 🔹 5. Bivariate Relationship — Exit vs 3-Month Employment
-Scatterplot + density plot of employment rates.
-
-> Positive correlation **(r ≈ 0.40)**:  
-> Sites with strong exit outcomes tend to maintain good 3-month performance,  
-> but other contextual factors also influence sustainability.
-
-![Exit vs 3 Month Employment](figures/mul.png)
-
----
-
-### 🔹 6. Multivariate Analysis — Scatter Matrix
-Examines interactions among multiple indicators: site size, exit employment, 3-month employment, and unemployment.
-
-> Confirms moderate positive relationships but no clear link between **site size** and success.  
-> → **Conclusion:** Quality and context matter more than scale.
-
-![Scatter Matrix](figures/corr.png)
-
----
-
-### 🔹 7. Predictive Modeling — Logistic Regression
-Tests whether exit outcomes predict follow-up employment.
-
-> **Coefficients:**  
-> + Employed at Exit → +0.0124 (positive effect)  
-> + Unemployed at Exit → –0.0148 (negative effect)  
->  
-> **Accuracy:** ~97%, but inflated by class imbalance (most sites had employment at follow-up).  
->  
-> → Exit success predicts sustainability, but additional factors should be modeled.
-
-![Logistic Regression Results](figures/log.png)
-
----
 
 
 
