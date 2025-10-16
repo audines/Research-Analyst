@@ -21,7 +21,7 @@ The analysis is conducted in **Python (Jupyter Notebook)** using `pandas`, `matp
 
 ##  Dataset Description & Dictionary
 
-ThE dataset contains **program performance data** for Ontario’s *Employment Services (ES)* network for the **2022–2023 fiscal year**.  
+The dataset contains **program performance data** for Ontario’s *Employment Services (ES)* network for the **2022–2023 fiscal year**.  
 Each row represents one **Service Delivery Site (SDS)** — a location that delivers Employment Ontario programs.
 
 The dataset reports **client outcomes** at two key points:
