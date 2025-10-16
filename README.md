@@ -51,7 +51,7 @@ pct_emp_3m = out_3_sum_emp / num_assist
 ### 🔹 Data Distribution — Assisted Clients per Site
 Shows the variation in client volume across 258 service delivery sites (SDSs).
 
-(https://github.com/audines/Research-Analyst/blob/main/assisted_clients_hist_with_stats.png)
+![Assisted Clients Summary](figures/numeric_summary_visual.png)(https://github.com/audines/Research-Analyst/blob/main/assisted_clients_hist_with_stats.png)
 
 - Most sites serve fewer than 500 clients; a few exceed 1,000,  creating strong data skew.  
 > → **Conclusion:** Use normalized rates (percentages) instead of raw counts.
@@ -64,7 +64,8 @@ Immediate program effectiveness — what happened when clients exited the progra
 
 > **Employment dominates**, followed by **Training/Education**.  
 > About **10% of cases are “Unknown”**, flagging a data quality concern.
-(https://github.com/audines/Research-Analyst/blob/main/exit_outcomes_with_numbers.png)
+
+![Exit Outcomes](figures/exit_outcomes_with_numbers.png)(https://github.com/audines/Research-Analyst/blob/main/exit_outcomes_with_numbers.png)
 
 -  dominates exit outcomes (~55,000 clients), followed by training (~13,000).
 
@@ -78,7 +79,8 @@ Short-term sustainability — are clients still employed 3 months after exit?
 > over **35,000 Null** and **16,000 Unknown** outcomes.  
 > → Follow-up data quality must improve for reliable evaluation.
 
-(https://github.com/audines/Research-Analyst/blob/main/threemonths_outcomes_with_numbers.png)
+
+![3-Month Outcomes](figures/threemonths_outcomes_with_numbers.png)(https://github.com/audines/Research-Analyst/blob/main/threemonths_outcomes_with_numbers.png)
 
 ### Regional Representation — Count of Records by Region
 Shows how many service sites are in each Ontario region.
@@ -100,7 +102,7 @@ Scatterplot + density plot of employment rates.
 > Sites with strong exit outcomes tend to maintain good 3-month performance,  
 > but other contextual factors also influence sustainability.
 
-![Exit vs 3 Month Employment](figures/mul.png)
+![Exit vs 3 Month Employment](figures/mul.png)(https://github.com/audines/Research-Analyst/blob/main/mul.png)
 
 ---
 
@@ -126,7 +128,7 @@ Tests whether exit outcomes predict follow-up employment.
 >  
 > → Exit success predicts sustainability, but additional factors should be modeled.
 
-![Logistic Regression Results](https://github.com/audines/Research-Analyst/blob/main/logistic_results_side_by_side_with_legend.png)
+![Logistic Regression Results]([figures/logistic_results_side_by_side_with_legend.png]https://github.com/audines/Research-Analyst/blob/main/logistic_results_side_by_side_with_legend.png)
 
 - Moderate correlation between employment at exit and at 3 months (r ≈ 0.40).
 
