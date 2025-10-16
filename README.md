@@ -51,7 +51,8 @@ pct_emp_3m = out_3_sum_emp / num_assist
 ### 🔹 Data Distribution — Assisted Clients per Site
 Shows the variation in client volume across 258 service delivery sites (SDSs).
 
-![Assisted Clients Summary](figures/numeric_summary_visual.png)(https://github.com/audines/Research-Analyst/blob/main/assisted_clients_hist_with_stats.png)
+![Assisted Clients Summary](https://raw.githubusercontent.com/audines/Research-Analyst/main/assisted_clients_hist_with_stats.png)
+
 
 - Most sites serve fewer than 500 clients; a few exceed 1,000,  creating strong data skew.  
 > → **Conclusion:** Use normalized rates (percentages) instead of raw counts.
@@ -65,7 +66,7 @@ Immediate program effectiveness — what happened when clients exited the progra
 > **Employment dominates**, followed by **Training/Education**.  
 > About **10% of cases are “Unknown”**, flagging a data quality concern.
 
-![Exit Outcomes](figures/exit_outcomes_with_numbers.png)(https://github.com/audines/Research-Analyst/blob/main/exit_outcomes_with_numbers.png)
+![Exit Outcomes](https://github.com/audines/Research-Analyst/blob/main/exit_outcomes_with_numbers.png)
 
 -  dominates exit outcomes (~55,000 clients), followed by training (~13,000).
 
